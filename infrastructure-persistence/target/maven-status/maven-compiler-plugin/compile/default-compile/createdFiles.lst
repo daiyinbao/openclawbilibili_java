@@ -1,0 +1,13 @@
+com/openbiliclaw/infrastructure/persistence/event/SqliteEventRepository$1.class
+com/openbiliclaw/infrastructure/persistence/profile/SqlitePreferenceProfileRepository.class
+com/openbiliclaw/infrastructure/persistence/schema/ProfileTableInitializer.class
+com/openbiliclaw/infrastructure/persistence/profile/SqliteSoulProfileRepository$2.class
+com/openbiliclaw/infrastructure/persistence/profile/SqliteSoulProfileRepository.class
+com/openbiliclaw/infrastructure/persistence/profile/SqliteSoulProfileRepository$1.class
+com/openbiliclaw/infrastructure/persistence/profile/SqlitePreferenceProfileRepository$2.class
+com/openbiliclaw/infrastructure/persistence/common/PersistenceOperationException.class
+com/openbiliclaw/infrastructure/persistence/schema/EventTableInitializer.class
+com/openbiliclaw/infrastructure/persistence/profile/SqlitePreferenceProfileRepository$1.class
+com/openbiliclaw/infrastructure/persistence/SqlitePersistenceMarker.class
+com/openbiliclaw/infrastructure/persistence/config/SqliteConnectionFactory.class
+com/openbiliclaw/infrastructure/persistence/event/SqliteEventRepository.class
