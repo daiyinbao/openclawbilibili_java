@@ -1,8 +1,0 @@
-/home/xiaoyaoxian/java_file/OpenBiliClaw_java/infrastructure-persistence/src/main/java/com/openbiliclaw/infrastructure/persistence/SqlitePersistenceMarker.java
-/home/xiaoyaoxian/java_file/OpenBiliClaw_java/infrastructure-persistence/src/main/java/com/openbiliclaw/infrastructure/persistence/common/PersistenceOperationException.java
-/home/xiaoyaoxian/java_file/OpenBiliClaw_java/infrastructure-persistence/src/main/java/com/openbiliclaw/infrastructure/persistence/config/SqliteConnectionFactory.java
-/home/xiaoyaoxian/java_file/OpenBiliClaw_java/infrastructure-persistence/src/main/java/com/openbiliclaw/infrastructure/persistence/event/SqliteEventRepository.java
-/home/xiaoyaoxian/java_file/OpenBiliClaw_java/infrastructure-persistence/src/main/java/com/openbiliclaw/infrastructure/persistence/profile/SqlitePreferenceProfileRepository.java
-/home/xiaoyaoxian/java_file/OpenBiliClaw_java/infrastructure-persistence/src/main/java/com/openbiliclaw/infrastructure/persistence/profile/SqliteSoulProfileRepository.java
-/home/xiaoyaoxian/java_file/OpenBiliClaw_java/infrastructure-persistence/src/main/java/com/openbiliclaw/infrastructure/persistence/schema/EventTableInitializer.java
-/home/xiaoyaoxian/java_file/OpenBiliClaw_java/infrastructure-persistence/src/main/java/com/openbiliclaw/infrastructure/persistence/schema/ProfileTableInitializer.java
