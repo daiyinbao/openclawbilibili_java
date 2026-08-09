@@ -13,12 +13,16 @@ import com.openbiliclaw.application.event.IngestEventUseCase;
 import com.openbiliclaw.application.profile.DefaultUpdateProfileUseCase;
 import com.openbiliclaw.application.profile.UpdateProfileUseCase;
 import com.openbiliclaw.domain.event.EventRepository;
+import com.openbiliclaw.domain.llm.LlmProvider;
+import com.openbiliclaw.domain.llm.LlmService;
 import com.openbiliclaw.domain.profile.PreferenceAnalyzer;
 import com.openbiliclaw.domain.profile.PreferenceProfileRepository;
 import com.openbiliclaw.domain.profile.SoulProfileBuilder;
 import com.openbiliclaw.domain.profile.SoulProfileRepository;
-import com.openbiliclaw.infrastructure.llm.profile.StubPreferenceAnalyzer;
+import com.openbiliclaw.infrastructure.llm.profile.LlmBackedPreferenceAnalyzer;
 import com.openbiliclaw.infrastructure.llm.profile.StubSoulProfileBuilder;
+import com.openbiliclaw.infrastructure.llm.provider.FakeLlmProvider;
+import com.openbiliclaw.infrastructure.llm.service.DefaultLlmService;
 import com.openbiliclaw.infrastructure.persistence.config.SqliteConnectionFactory;
 import com.openbiliclaw.infrastructure.persistence.event.SqliteEventRepository;
 import com.openbiliclaw.infrastructure.persistence.profile.SqlitePreferenceProfileRepository;
@@ -30,6 +34,7 @@ public class CliBootstrap {
     
     
      
+      
       private final EventRepository eventRepository;
       private final PreferenceProfileRepository preferenceProfileRepository;
       private final SoulProfileRepository soulProfileRepository;
@@ -60,7 +65,10 @@ public class CliBootstrap {
                   objectMapper
           );
 
-          PreferenceAnalyzer preferenceAnalyzer = new StubPreferenceAnalyzer();
+          LlmProvider llmProvider = new FakeLlmProvider();
+          LlmService llmService = new DefaultLlmService(llmProvider);
+
+          PreferenceAnalyzer preferenceAnalyzer = new LlmBackedPreferenceAnalyzer(llmService);
           SoulProfileBuilder soulProfileBuilder = new StubSoulProfileBuilder();
 
           this.ingestEventUseCase = new DefaultIngestEventUseCase(eventRepository);

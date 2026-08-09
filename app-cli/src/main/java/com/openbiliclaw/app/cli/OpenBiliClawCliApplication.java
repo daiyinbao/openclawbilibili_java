@@ -23,7 +23,7 @@ public final class OpenBiliClawCliApplication {
 
           UserEventPayload eventPayload = new UserEventPayload(
                   EventType.VIEW,
-                  "Bilibili architecture demo",
+                  "Bilibili java demo",
                   "https://www.bilibili.com/video/BV1demo123",
                   Instant.now(),
                   SourcePlatform.BILIBILI,
