@@ -20,7 +20,7 @@ import com.openbiliclaw.domain.profile.PreferenceProfileRepository;
 import com.openbiliclaw.domain.profile.SoulProfileBuilder;
 import com.openbiliclaw.domain.profile.SoulProfileRepository;
 import com.openbiliclaw.infrastructure.llm.profile.LlmBackedPreferenceAnalyzer;
-import com.openbiliclaw.infrastructure.llm.profile.StubSoulProfileBuilder;
+import com.openbiliclaw.infrastructure.llm.profile.LlmBackedSoulProfileBuilder;
 import com.openbiliclaw.infrastructure.llm.provider.FakeLlmProvider;
 import com.openbiliclaw.infrastructure.llm.service.DefaultLlmService;
 import com.openbiliclaw.infrastructure.persistence.config.SqliteConnectionFactory;
@@ -34,6 +34,7 @@ public class CliBootstrap {
     
     
      
+      
       
       private final EventRepository eventRepository;
       private final PreferenceProfileRepository preferenceProfileRepository;
@@ -69,7 +70,7 @@ public class CliBootstrap {
           LlmService llmService = new DefaultLlmService(llmProvider);
 
           PreferenceAnalyzer preferenceAnalyzer = new LlmBackedPreferenceAnalyzer(llmService);
-          SoulProfileBuilder soulProfileBuilder = new StubSoulProfileBuilder();
+          SoulProfileBuilder soulProfileBuilder = new LlmBackedSoulProfileBuilder(llmService);
 
           this.ingestEventUseCase = new DefaultIngestEventUseCase(eventRepository);
           this.updateProfileUseCase = new DefaultUpdateProfileUseCase(
